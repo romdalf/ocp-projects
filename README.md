@@ -169,6 +169,10 @@ spec:
     - to:
         - podSelector: {}
 ```
+In  a nutshell, the above policy denies all traffic from and to the project space ```my-webapp-dev``` except for:  
+- an ingress access from a specific network segment (10.20.30.0/24); like the network on which the developers are working from.
+- an egress exit from the cluster on a port 443 to query other services that the application should interact with. This can be reduce using a CIDR definition.
+- an access to the internal Kubernetes DNS service to resolve names.
 
 ### Deploy Application
 
