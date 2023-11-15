@@ -1,0 +1,9 @@
+apiVersion: v1
+entries:
+  aks-helloworld:
+  - apiVersion: v1
+    description: hello-path helm charts
+    name: hello-path
+    urls:
+    - https://romdalf.github.io/ocp-projects/helm-charts/archives/hello-path-0.1.tgz
+    version: 0.1
