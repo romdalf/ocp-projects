@@ -1,7 +1,7 @@
 apiVersion: v1
 entries:
   aks-helloworld:
-  - apiVersion: v1
+  - apiVersion: v2
     description: hello-path helm charts
     name: hello-path
     urls:
