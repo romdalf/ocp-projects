@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-path-{{.Release.Name}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-path-{{.Release.Name}}
+  template:
+    metadata:
+      labels:
+        app: hello-path-{{.Release.Name}}
+    spec:
+      containers:
+      - name: hello-path-{{.Release.Name}}
+        image: ghcr.io/romdalf/hello:1.0-ubi
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-path-{{.Release.Name}}
+spec:
+  type: ClusterIP
+  ports:
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: hello-path-{{.Release.Name}}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-path-{{.Release.Name}}
+spec:
+  to:
+    kind: Service
+    name: hello-path-{{.Release.Name}}
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+  
