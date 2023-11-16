@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "image": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "number"
+        },
+        "cpuArch": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "cpuArch"
+      ]
+    }
+  },
+  "required": [
+    "image"
+  ]
+}
