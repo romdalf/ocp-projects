@@ -1,3 +1,5 @@
 image:
-  version: 1.0
+  version: '1.0'
+  type: ubi
   cpuArch: x86
+# result of the above is a tag like 1.0-ubi-x86
