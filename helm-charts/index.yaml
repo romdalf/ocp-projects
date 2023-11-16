@@ -1,9 +1,14 @@
 apiVersion: v1
 entries:
+<<<<<<< HEAD
   hello-path:
   - apiVersion: v2
     appVersion: "1.0"
     created: "2023-11-15T17:57:38.459443-08:00"
+=======
+  aks-helloworld:
+  - apiVersion: v2
+>>>>>>> 581845dcb486ea1002d2de6587a6f41bd6441527
     description: hello-path helm charts
     digest: 5cce09a84b70f82d800326fb093245d07fddd328dd7a0f9c25ae22e159131cd8
     maintainers:
@@ -12,6 +17,11 @@ entries:
     name: hello-path
     type: application
     urls:
+<<<<<<< HEAD
     - hello-path-0.1.tgz
     version: "0.1"
 generated: "2023-11-15T17:57:38.458689-08:00"
+=======
+    - https://romdalf.github.io/ocp-projects/helm-charts/archives/hello-path-0.1.tgz
+    version: 0.1
+>>>>>>> 581845dcb486ea1002d2de6587a6f41bd6441527
