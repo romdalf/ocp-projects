@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: {{.Release.Name}}
-        image: ghcr.io/romdalf/hello:1.0-ubi-x86
+        image: ghcr.io/romdalf/hello:{{.Values.imageVers}}-ubi-{{.Values.imageArch}}
         ports:
         - containerPort: 8080
 ---

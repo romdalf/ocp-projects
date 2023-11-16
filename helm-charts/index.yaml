@@ -3,7 +3,20 @@ entries:
   hello-path:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2023-11-15T18:03:18.715241-08:00"
+    created: "2023-11-16T08:27:40.008006-08:00"
+    description: hello-path helm charts
+    digest: 16a3eefb919558c5fa7c7be2b076a98d09631f8846a4c9cc6eee5e835334b200
+    maintainers:
+    - email: rom.adams@redhat.com
+      name: Rom Adams
+    name: hello-path
+    type: application
+    urls:
+    - hello-path-0.2.tgz
+    version: "0.2"
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2023-11-16T08:27:40.007796-08:00"
     description: hello-path helm charts
     digest: 5cce09a84b70f82d800326fb093245d07fddd328dd7a0f9c25ae22e159131cd8
     maintainers:
@@ -14,4 +27,4 @@ entries:
     urls:
     - hello-path-0.1.tgz
     version: "0.1"
-generated: "2023-11-15T18:03:18.713935-08:00"
+generated: "2023-11-16T08:27:40.006631-08:00"
