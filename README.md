@@ -1,5 +1,5 @@
 # OpenShift Project Usage
-Source code available at [https://romdalf.github.io/ocp-projects/](https://romdalf.github.io/ocp-projects/)
+Source code available at [https://github.com/romdalf/ocp-projects](https://github.com/romdalf/ocp-projects)
 
 Note that I will refer to "project" instead of "namespace" (original term from Kubernetes) to match the OpenShift terminology. 
 
