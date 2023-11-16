@@ -3,3 +3,12 @@ image:
   type: ubi
   cpuArch: x86
 # result of the above is a tag like 1.0-ubi-x86
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 100Mi
+  limits:
+    cpu: 1
+    memory: 1Gi
+

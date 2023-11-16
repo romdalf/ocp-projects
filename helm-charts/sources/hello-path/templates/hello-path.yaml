@@ -17,6 +17,13 @@ spec:
         image: ghcr.io/romdalf/hello:{{.Values.image.version}}-{{.Values.image.type}}-{{.Values.image.cpuArch}}
         ports:
         - containerPort: 8080
+        resources:
+          requests:
+            cpu: {{.Values.resources.requests.cpu}} 
+            memory: {{.Values.resources.requests.memory}}
+          limits:
+            cpu: {{.Values.resources.limits.cpu}}
+            memory: {{.Values.resources.limits.memory}}
 ---
 apiVersion: v1
 kind: Service
