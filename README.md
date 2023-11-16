@@ -96,7 +96,7 @@ The above example established a series of limitations for the project ```my-weba
 The quota can be monitored via:
 
 GUI:  
-![quota-dashboard](quota-dashboard.png)
+![quota-dashboard](images/quota-dashboard.png)
 
 CLI:
 ```
@@ -132,7 +132,7 @@ Then, TST and PRD might have a similar quota definition except for the actual li
 By default, all pods from any projects can have access to each others. To isolate each project, network policies can be used.  
 Here is an example with a flow diagram and the associated configuration:
 
-![network policy flow](networkpolicy-flow.png)
+![network policy flow](images/networkpolicy-flow.png)
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -174,7 +174,33 @@ In  a nutshell, the above policy denies all traffic from and to the project spac
 - an egress exit from the cluster on a port 443 to query other services that the application should interact with. This can be reduce using a CIDR definition.
 - an access to the internal Kubernetes DNS service to resolve names.
 
-### Deploy Application
+## Deploying Application
+Applications can be deployed by multiple way. In this example, we will be using a simple Helm chart as it is the current model. 
+
+In this context, two version of a helm chart for Hello Path have been created; version 0.1 and 0.2, the main difference being the ability to define parameters at the deployment time.
+The repository where these charts are hosted will be added within the Helm Developer Catalogue at cluster scope level. Doing so allows access to the helm charts to be deployed in any projects which in our case means ```my-webapp-dev```, ```my-webapp-tst```, ```my-webapp-prd```.
+
+***Within the Developer view***   
+Create the Helm Chart repo within OpenShift  
+![helm repo](images/helm-repo-01.png)
+![helm repo](images/helm-repo-02.png)
+
+Deploy the application using the Helm Chart catalogue
+![helm repo](images/helm-deploy-01.png)
+![helm repo](images/helm-deploy-02.png)
+![helm repo](images/helm-deploy-03.png)
+![helm repo](images/helm-deploy-04.png)
+
+At this stage, the quota prevents the deployment of the application. Let's edit the limts/requests to carry on with the deployment.
+![helm repo](images/helm-deployed-quota-01.png)
+![helm repo](images/helm-deployed-quota-02.png)
+![helm repo](images/helm-deployed-quota-03.png)
+
+***Within the Administrator view***    
+Going back to the quota dashboard, we can see the resource consumption of our application.  
+![helm repo](images/helm-deployed-quota-04.png)
+
+
 
 ## Testing
 First, we might want to differentiate functional and non-functional testing which could lead to different experience or requirements when leveraging the concept of namespace/project. 
