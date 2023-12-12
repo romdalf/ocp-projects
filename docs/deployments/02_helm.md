@@ -2,6 +2,7 @@
 title: Helm Charts in OCP
 layout: default
 parent: Deployments
+nav_order: 2
 ---
 
 Applications can be deployed by multiple way. In this example, we will be using a simple Helm chart as it is the current model. 
