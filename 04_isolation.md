@@ -9,7 +9,7 @@ Here is an example with a flow diagram and the associated configuration:
 
 ![network policy flow](images/networkpolicy-flow.png)
 
-```yaml
+```yaml 
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
