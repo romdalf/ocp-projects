@@ -1,8 +1,9 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: OCP by Examples
+description: 
 theme: just-the-docs
+color_scheme: dark
 
-url: https://romdalf.github.io/just-the-docs
+url: https://romdalf.github.io/ocp-projects
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
