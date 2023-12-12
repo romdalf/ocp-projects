@@ -16,7 +16,7 @@ A good example of this would be a web front-end pod and a database pod being dep
 oc new-project my-webapp --display-name="External web services" --description="External customer facing web service" 
 ```
 
-```YAML
+```yaml
 kind: Project
 apiVersion: project.openshift.io/v1
 metadata:
@@ -32,7 +32,7 @@ metadata:
 Considering an application lifecycle, and our interest in testing, we can create three projects;   
 * ```my-webapp-dev```; where all the development will happen and each pull request from a git perspective will trigger a pipeline to build and deploy a new version of the application.
 
-```YAML
+```yaml
 kind: Project
 apiVersion: project.openshift.io/v1
 metadata:
@@ -44,7 +44,7 @@ metadata:
 
 * ```my-webapp-tst```; where a release candidate would be deployed and goes through the functional and non-functional testing.
 
-```YAML
+```yaml
 kind: Project
 apiVersion: project.openshift.io/v1
 metadata:
@@ -56,7 +56,7 @@ metadata:
   
 * ```my-webapp-prd```; where a release candidate has been validated and cut as the next go to release.
 
-```YAML
+```yaml
 kind: Project
 apiVersion: project.openshift.io/v1
 metadata:
@@ -70,7 +70,7 @@ metadata:
 We often see that the last stage is hosted on a different platform to guarantee resource availability when dev/test activities are running and could potentially hog compute resources creating turbulences to other application running in production context.  
 To avoid this situation, quotas can be put in place to limit the conception of a share platform. 
 
-```YAML
+```yaml
 apiVersion: v1
 kind: ResourceQuota
 metadata:
