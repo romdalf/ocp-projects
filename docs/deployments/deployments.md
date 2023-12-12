@@ -6,10 +6,9 @@ has_children: true
 permalink: docs/deployments
 ---
 
-# Deployments
+Applications can be deployed using different methodologies. In this section, the following approaches are considered: 
 
-Goes through the different deployment styles like:
-
+- Source to Image
 - Helm Charts
 - GitOps
 - Operators

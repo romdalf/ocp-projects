@@ -5,8 +5,6 @@ parent: Deployments
 nav_order: 2
 ---
 
-Applications can be deployed by multiple way. In this example, we will be using a simple Helm chart as it is the current model. 
-
 In this context, two version of a helm chart for Hello Path have been created; version 0.1 and 0.2, the main difference being the ability to define parameters at the deployment time.
 The repository where these charts are hosted will be added within the Helm Developer Catalogue at cluster scope level. Doing so allows access to the helm charts to be deployed in any projects which in our case means ```my-webapp-dev```, ```my-webapp-tst```, ```my-webapp-prd```.
 
