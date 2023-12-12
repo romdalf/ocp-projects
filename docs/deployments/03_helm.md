@@ -1,7 +1,6 @@
 ---
 title: Helm Charts in OCP
 layout: default
-nav_order: 3
 parent: Deployments
 ---
 
