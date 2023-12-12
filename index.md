@@ -1,3 +1,8 @@
+---
+title: Home
+layout: home
+---
+
 # OpenShift Project Usage
 Source code available at [https://github.com/romdalf/ocp-projects](https://github.com/romdalf/ocp-projects)
 
