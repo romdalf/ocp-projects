@@ -1,5 +1,5 @@
 ---
-title: Deploy with Helm Charts
+title: Helm Charts in OCP
 layout: default
 nav_order: 3
 ---
