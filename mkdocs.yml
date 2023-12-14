@@ -19,6 +19,7 @@ theme:
     - content.code.annotate
     - navigation.top
     - navigation.footer
+    - navigation.indexes
     - content.code.copy
     - content.code.select
   icon:
@@ -47,21 +48,20 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
-#     - scheme: default
-#       primary: white 
-#       accent: blue 
-#       toggle:
-#         icon: material/lightbulb-outline
-#         name: Switch to dark mode
-#     - scheme: slate 
-#       primary: black 
-#       accent: blue 
-#       toggle:
-#         icon: material/lightbulb
-#         name: Switch to light mode
+
 extra_css: 
   - stylesheets/extra.css
 extra:
+  consent:
+    actions:
+      - accept
+      - reject
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
   social:
     - icon: fontawesome/brands/github 
       link: https://github.com/romdalf/ocp-projects
