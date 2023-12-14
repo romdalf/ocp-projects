@@ -1,7 +1,7 @@
 title: OCP by Examples
 description: 
 theme: just-the-docs
-color_scheme: dark
+#color_scheme: dark
 
 url: https://romdalf.github.io/ocp-projects
 repository: romdalf/ocp-projects
