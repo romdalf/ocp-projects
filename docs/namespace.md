@@ -1,20 +1,14 @@
 
 
-A ```project``` is a logical space created on an OpenShift cluster to host one or more pods that will have direct interaction with each other. 
-A good example of this would be a web front-end pod and a database pod being deployed within a project called "my-webapp".
+A ```project``` is a logical space created on an OpenShift cluster corresponding to a ```namespace``` to host one or more pods that will have direct interaction with each other. 
+As an example, a web front-end pod and a database pod could be deployed within a project called ```my-webapp```.
 
 ```
 oc new-project my-webapp --display-name="External web services" --description="External customer facing web service" 
 ```
 
 ```yaml 
-kind: Project
-apiVersion: project.openshift.io/v1
-metadata:
-  name: my-webapp
-  annotations:
-    openshift.io/description: External customer facing web service
-    openshift.io/display-name: External web services
+--8<-- "sources/project.yaml"
 ```
 
 Considering an application lifecycle, and our interest in testing, we can create three projects;   
