@@ -103,7 +103,7 @@ markdown_extensions:
 nav:
   - About: index.md
   - Application:
-    - application/application_index.md
+    - application/index.md
     - Projects:
       - Namespace: namespace.md
       - Quota: quota.md
