@@ -1,8 +1,4 @@
----
-title: Testing
-layout: default
-nav_order: 5
----
+
 
 The project/namespace construct can be leverage in a shared platform to address different needs from dev to production, including test activities. For the latter, we might want to differentiate functional and nonfunctional testing:  
 * the functional testing will focus on the application itself, this will consume a certain amount of compute resources and can be forecasted.

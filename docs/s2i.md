@@ -1,9 +1,4 @@
----
-title: Source to Image
-layout: default
-parent: Deployments
-nav_order: 1
----
+
 
 The source to image deployment approach is an interesting path to learn about the different objects needed to have a working deployment of a test application or during early development. However, it is considered very basic and discouraged for production-grade needs. 
 

@@ -1,8 +1,4 @@
----
-title: Home
-layout: home
-nav_order: 0
----
+
 
 The purpose of this GitHub Pages is to document discussions, contents, and presentations done related to containers and Red Hat OpenShift. 
 

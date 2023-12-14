@@ -1,8 +1,4 @@
----
-title: Projects
-layout: default
-nav_order: 1
----
+
 
 A ```project``` is a logical space created on an OpenShift cluster to host one or more pods that will have direct interaction with each other. 
 A good example of this would be a web front-end pod and a database pod being deployed within a project called "my-webapp".

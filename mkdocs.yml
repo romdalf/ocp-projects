@@ -1,0 +1,106 @@
+site_name: Handbook 
+site_url: https://romdalf.github.io/ocp-projects/
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-authors
+  - git-committers:
+      repository: romdalf/ocp-projects
+      branch: main 
+#       token: !ENV GH_TOKEN
+
+theme:
+  font:
+    text: Red Hat Text
+    code: Red Hat Mono
+#  logo: images/logo-color-horizontal.svg
+  features:
+    - content.code.annotate
+    - navigation.top
+  icon:
+    repo: fontawesome/brands/github
+  name: material
+  palette: 
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+#     - scheme: default
+#       primary: white 
+#       accent: blue 
+#       toggle:
+#         icon: material/lightbulb-outline
+#         name: Switch to dark mode
+#     - scheme: slate 
+#       primary: black 
+#       accent: blue 
+#       toggle:
+#         icon: material/lightbulb
+#         name: Switch to light mode
+extra_css: 
+  - stylesheets/extra.css
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/romdalf/ocp-projects
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/romdalf 
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/romdalf/
+#    - icon: fontawesome/brands/youtube
+#      link: https://www.youtube.com/channel/UCWhaUE5K9RfkJVGrHys3xug
+  generator: true
+copyright: MIT License. 
+repo_url: https://github.com/romdalf/ocp-projects
+repo_name: romdalf/ocp-projects 
+edit_uri: edit/main/docs/
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - def_list
+  - md_in_html
+  - pymdownx.snippets:
+      base_path: 'docs/'
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - About: 'index.md'
+  - Application:
+    - Projects:
+      - Namespace: 'namespace.md'
+      - Quota: 'quota.md'
+    - Deployments:
+      - Source to Image: 's2i.md'
+      - Helm Charts: 'helm.md'
+    - Security:
+      - Network Policy: 'isolation.md'
+    - Testing:
+      - Intro: 'testing'

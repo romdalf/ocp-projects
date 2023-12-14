@@ -1,8 +1,3 @@
----
-title: Isolation
-layout: default
-nav_order: 4
----
 
 By default, all pods from any projects can have access to each others. To isolate each project, network policies can be used.  
 Here is an example with a flow diagram and the associated configuration:

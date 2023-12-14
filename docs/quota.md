@@ -1,8 +1,4 @@
----
-title: Quota
-layout: default
-nav_order: 2
----
+
 
 We often see that the last stage is hosted on a different platform to guarantee resource availability when dev/test activities are running and could potentially hog compute resources creating turbulences to other application running in production context.  
 To avoid this situation, quotas can be put in place to limit the conception of a share platform. 
