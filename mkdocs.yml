@@ -101,15 +101,16 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 nav:
-  - About: 'index.md'
+  - About: index.md
   - Application:
+    - application_index.md
     - Projects:
-      - Namespace: 'namespace.md'
-      - Quota: 'quota.md'
+      - Namespace: namespace.md
+      - Quota: quota.md
     - Deployments:
-      - Source to Image: 's2i.md'
-      - Helm Charts: 'helm.md'
+      - Source to Image: s2i.md
+      - Helm Charts: helm.md
     - Security:
-      - Network Policy: 'isolation.md'
+      - Network Policy: isolation.md
     - Testing:
-      - Intro: 'testing'
+      - Intro: testing

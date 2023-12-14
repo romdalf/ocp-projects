@@ -3,47 +3,35 @@
 A ```project``` is a logical space created on an OpenShift cluster corresponding to a ```namespace``` to host one or more pods that will have direct interaction with each other. 
 As an example, a web front-end pod and a database pod could be deployed within a project called ```my-webapp```.
 
+The CLI command to create a ```project``` is:   
 ```
 oc new-project my-webapp --display-name="External web services" --description="External customer facing web service" 
 ```
 
+The YAML API object definition is:  
 ```yaml 
 --8<-- "sources/project.yaml"
 ```
 
-Considering an application lifecycle, and our interest in testing, we can create three projects;   
-* ```my-webapp-dev```; where all the development will happen and each pull request from a git perspective will trigger a pipeline to build and deploy a new version of the application.
+Considering an application lifecycle, three projects could be created on a single OCP cluster:  
+
+* ```my-webapp-dev```; where all the development will happen and each pull request from a git perspective could trigger pipeline update to build and deploy a new version of the application.
 
 ```yaml
-kind: Project
-apiVersion: project.openshift.io/v1
-metadata:
-  name: my-webapp-dev
-  annotations:
-    openshift.io/description: Development of External customer facing web service
-    openshift.io/display-name: DEV EWS
+--8<-- "sources/gitops/dev/project.yaml"
+
 ```
 
 * ```my-webapp-tst```; where a release candidate would be deployed and goes through the functional and non-functional testing.
 
 ```yaml
-kind: Project
-apiVersion: project.openshift.io/v1
-metadata:
-  name: my-webapp-tst
-  annotations:
-    openshift.io/description: Test environment for External customer facing web service
-    openshift.io/display-name: TST EWS
+--8<-- "sources/gitops/tst/project.yaml"
+
 ```
   
 * ```my-webapp-prd```; where a release candidate has been validated and cut as the next go to release.
 
 ```yaml
-kind: Project
-apiVersion: project.openshift.io/v1
-metadata:
-  name: my-webapp-prd
-  annotations:
-    openshift.io/description: Production Environment for External customer facing web service
-    openshift.io/display-name: PRD EWS
+--8<-- "sources/gitops/prd/project.yaml"
+
 ```
