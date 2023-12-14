@@ -1,4 +1,4 @@
-site_name: Handbook 
+site_name: OpenShift Experience Handbook 
 site_url: https://romdalf.github.io/ocp-projects/
 
 plugins:
@@ -18,6 +18,9 @@ theme:
   features:
     - content.code.annotate
     - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.code.select
   icon:
     repo: fontawesome/brands/github
   name: material
@@ -62,7 +65,7 @@ extra:
   social:
     - icon: fontawesome/brands/github 
       link: https://github.com/romdalf/ocp-projects
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/romdalf 
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/romdalf/
@@ -85,6 +88,12 @@ markdown_extensions:
   - md_in_html
   - pymdownx.snippets:
       base_path: 'docs/'
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
