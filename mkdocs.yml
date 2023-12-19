@@ -102,6 +102,11 @@ markdown_extensions:
 
 nav:
   - About: index.md
+  - OpenShift:
+    - openshift/index.md
+    - OpenShift Local: openshift/local.md
+    - Agend install: openshift/agent.md
+    - Microshift: openshift/microshift.md
   - Application:
     - application/index.md
     - Projects:

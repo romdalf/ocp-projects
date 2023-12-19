@@ -1,0 +1,1 @@
+This is the subsection about installing OpenShift in various ways.
