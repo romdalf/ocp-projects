@@ -105,12 +105,12 @@ nav:
   - Application:
     - application/index.md
     - Projects:
-      - Namespace: namespace.md
-      - Quota: quota.md
+      - Namespace: application/namespace.md
+      - Quota: application/quota.md
     - Deployments:
-      - Source to Image: s2i.md
-      - Helm Charts: helm.md
+      - Source to Image: application/s2i.md
+      - Helm Charts: application/helm.md
     - Security:
-      - Network Policy: isolation.md
+      - Network Policy: application/isolation.md
     - Testing:
-      - Intro: testing
+      - Intro: application/testing.md
