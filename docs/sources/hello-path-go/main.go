@@ -3,44 +3,40 @@ package main
 import (
     "fmt"
 	"log"
+	"os"
     "net/http"
 )
 
 func main() {
+	
+	// Intanciate a logger 
+	hplog := log.New(os.Stdout, "[GO] ", log.LstdFlags)
 
+	// Define a handler for pseudo GET requests
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
-		w.WriterHeader(200)
-		fmt.Fprintf(w, "Try to add /test as a path.")
+		path := r.URL.Path 
+
+		// conditional message based on the provided path
+		if path != "/" {
+			// return value to the pseudo GET request
+			fmt.Fprintf(w, "hello from %s\n", path)
+			// log the pseudo GET request
+			hplog.Println("GET ", path)
+		} else {
+			// return value to the pseudo GET request
+			fmt.Fprintf(w, "try to add /test as path\n")
+			// log the pseudo GET request
+			hplog.Println("GET ", path)
+		}		
 	})
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
-		w.WriterHeader(200)
-		fmt.Fprintf(w, "Try to add /test as a path.")
-	})
+	// Print web service start message at the console
+	hplog.Println("Creating a hello path web service with logger")
+	hplog.Println("Web service accessible at localhost:8080")
 
-
-	// print the hello message with the URL path 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello from URL path: %s\n", r.URL.Path)
-
-		// if URL path is root - propose a test
-		if r.URL.Path == "/" {
-			fmt.Fprintf(w, "Try to add /test as a path.")
-		}
-
-		// print the URL path at the console
-		if r.URL.Path != "/favicon.ico" {
-			fmt.Printf("User requested the URL path: %s\n", r.URL.Path)
-		}
-    })
-
-	// print message at the console
-	fmt.Println("Red Hat Partner Meetup BeLux - Hello World")
-	fmt.Println("--> Server running on http://localhost:8080")
-
-	// start the service and listen on the given port
+	// Start the service and listen on the given port
     if err := http.ListenAndServe(":8080", nil); err != nil {
-		// print error messages at the console
-		log.Fatal(err)
+		// Log error messages
+		hplog.Fatal(err)
 	}
 }
