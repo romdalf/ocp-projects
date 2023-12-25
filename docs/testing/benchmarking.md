@@ -37,7 +37,7 @@ go mod init hello-world-go
 ```
 This will create a file called ```go.mod``` with the following content: 
 
-```go
+```
 --8<-- "sources/hello-world-article/hello-world-go/go.mod"
 ```
 
@@ -48,7 +48,7 @@ go mod tidy
 ```
 This will create a file called ```go.sum``` with the following content:
 
-```go
+```
 --8<-- "sources/hello-world-article/hello-world-go/go.sum"
 ```
 
