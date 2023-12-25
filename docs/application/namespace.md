@@ -25,12 +25,10 @@ Considering an application lifecycle, three projects could be created on a singl
 
 ```yaml
 --8<-- "sources/gitops/tst/project.yaml"
-
 ```
   
 * ```my-webapp-prd```; where a release candidate has been validated and cut as the next go to release.
 
 ```yaml
 --8<-- "sources/gitops/prd/project.yaml"
-
 ```
