@@ -6,7 +6,7 @@ Regarding bias, Application teams have their favorite language and framework in 
 
 Let's take this [article](https://medium.com/deno-the-complete-reference/quarkus-java-vs-gin-go-hello-world-performance-0a2ec6d92078) as a reference. While the overall content provides a sufficient overview for an introduction, it does not help to perform a similar benchmarking within our environment, which will most likely significantly differ from the author. Let's address this missing part as a companion to the article. 
 
-## How to redo as-is the article benchmark
+## The article benchmark
 From a setup perspective, the author defines the following:
 - The hardware is based on a MacBook Pro M2 with 16GB of RAM
 - [Bombardier](https://github.com/codesenberg/bombardier); a HTTP(S) bencharmking tool written in Go(lang)
@@ -29,6 +29,9 @@ These are a good start; however, the Go code calls from [Gin](https://github.com
 
 </div>
 
+```java title="Quarkus"
+--8<-- "sources/hello-world-article/hello-world-quarkus/src/main/java/org/acme/HelloWorldApplication.java" 
+```
 
 
 
