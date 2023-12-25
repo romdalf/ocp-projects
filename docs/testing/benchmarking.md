@@ -535,3 +535,20 @@ Here are the output of each Quarkus benchmark sessions for reference:
     Throughput:    14.13MB/s
     ```
 
+### Conclusion 
+
+Putting aside the code, even with identical parameters, the benchmark's results are significantly influenced by the uniqueness of each environment. The only constant is the methodology to perform these benchmarks. 
+
+And yet, the above is still missing crucial details:
+
+- Did the web service run with the language interpreter or a binary?
+- What would be the impact of running it natively or as a container?
+- Is the code representing a minimal viable product? 
+
+## Alternative approach
+
+
+
+
+
+
