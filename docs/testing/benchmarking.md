@@ -122,7 +122,6 @@ Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-
 
 
 
-
 #### Quarkus   
 
 ```java title="The Java/Quarkus code from the article"
@@ -284,5 +283,106 @@ mv src/test/java/org/acme/GreetingResourceTest.java src/test/java/org/acme/Hello
 ```java title="HelloWorldApplicationTest.java"
 --8<-- "sources/hello-world-article/hello-world-quarkus/src/test/java/org/acme/HelloWorldApplicationTest.java"
 ```
+
+- Delete the ```target``` directory and build agan:
+
+```
+rm -rf target
+quarkus build
+```
+
+Resulting in the following output:
+```
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< org.acme:hello-world-quarkus >--------------------
+[INFO] Building hello-world-quarkus 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ hello-world-quarkus ---
+[INFO] skip non existing resourceDirectory /Users/romdalf/dev/hello-world-quarkus/src/main/resources
+[INFO] 
+[INFO] --- quarkus:3.6.4:generate-code (default) @ hello-world-quarkus ---
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ hello-world-quarkus ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 1 source file with javac [debug release 21] to target/classes
+[INFO] 
+[INFO] --- quarkus:3.6.4:generate-code-tests (default) @ hello-world-quarkus ---
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ hello-world-quarkus ---
+[INFO] skip non existing resourceDirectory /Users/romdalf/dev/hello-world-quarkus/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ hello-world-quarkus ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug release 21] to target/test-classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ hello-world-quarkus ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.acme.HelloWorldApplicationTest
+2023-12-25 11:19:08,017 INFO  [io.quarkus] (main) hello-world-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.4) started in 0.994s. Listening on: http://localhost:8081
+2023-12-25 11:19:08,017 INFO  [io.quarkus] (main) Profile test activated. 
+2023-12-25 11:19:08,018 INFO  [io.quarkus] (main) Installed features: [cdi, resteasy-reactive, smallrye-context-propagation, vertx]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.769 s -- in org.acme.HelloWorldApplicationTest
+2023-12-25 11:19:08,588 INFO  [io.quarkus] (main) hello-world-quarkus stopped in 0.012s
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ hello-world-quarkus ---
+[INFO] Building jar: /Users/romdalf/dev/hello-world-quarkus/target/hello-world-quarkus-1.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- quarkus:3.6.4:build (default) @ hello-world-quarkus ---
+[INFO] [io.quarkus.deployment.QuarkusAugmentor] Quarkus augmentation completed in 750ms
+[INFO] 
+[INFO] --- failsafe:3.1.2:integration-test (default) @ hello-world-quarkus ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- failsafe:3.1.2:verify (default) @ hello-world-quarkus ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- install:3.1.1:install (default-install) @ hello-world-quarkus ---
+[INFO] Installing /Users/romdalf/dev/hello-world-quarkus/pom.xml to /Users/romdalf/.m2/repository/org/acme/hello-world-quarkus/1.0.0-SNAPSHOT/hello-world-quarkus-1.0.0-SNAPSHOT.pom
+[INFO] Installing /Users/romdalf/dev/hello-world-quarkus/target/hello-world-quarkus-1.0.0-SNAPSHOT.jar to /Users/romdalf/.m2/repository/org/acme/hello-world-quarkus/1.0.0-SNAPSHOT/hello-world-quarkus-1.0.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.686 s
+[INFO] Finished at: 2023-12-25T11:19:09+01:00
+[INFO] ------------------------------------------------------------------------
+```
+
+- Finally, to run the JAR:
+
+```
+java -jar target/quarkus-app/quarkus-run.jar
+```
+
+Resulting in the following output:
+```
+__  ____  __  _____   ___  __ ____  ______ 
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \   
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/   
+2023-12-25 11:22:35,496 INFO  [io.quarkus] (main) hello-world-quarkus 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.6.4) started in 0.636s. Listening on: http://0.0.0.0:8080
+2023-12-25 11:22:35,501 INFO  [io.quarkus] (main) Profile prod activated. 
+2023-12-25 11:22:35,502 INFO  [io.quarkus] (main) Installed features: [cdi, resteasy-reactive, smallrye-context-propagation, vertx]
+```
+
+### Benchmarking
 
 
