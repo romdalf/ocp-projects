@@ -241,3 +241,48 @@ Hello World!%
 
 ***Note that there is no output logged into the first console where the service is running.***
 
+- The code seems to be working, we can build a binary:
+
+```
+quarkus build
+```
+
+Resulting in a error linked to the test suites:
+```
+2023-12-25 11:10:08,561 INFO  [io.quarkus] (main) hello-world-quarkus stopped in 0.014s
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   GreetingResourceTest.testHelloEndpoint:16 1 expectation failed.
+Expected status code <200> but was <404>.
+
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.915 s
+[INFO] Finished at: 2023-12-25T11:10:08+01:00
+[INFO] ------------------------------------------------------------------------
+```
+
+- Rename the test files:
+
+```
+mv src/test/java/org/acme/GreetingResourceIT.java src/test/java/org/acme/HelloWorldApplicationIT.java
+mv src/test/java/org/acme/GreetingResourceTest.java src/test/java/org/acme/HelloWorldApplicationTest.java
+```
+
+- Adapt the content of each test files like: 
+
+```java title="HelloWorldApplicationIT.java"
+--8<-- "sources/hello-world-article/hello-world-quarkus/src/test/java/org/acme/HelloWorldApplicationIT.java"
+```
+
+```java title="HelloWorldApplicationTest.java"
+--8<-- "sources/hello-world-article/hello-world-quarkus/src/test/java/org/acme/HelloWorldApplicationTest.java"
+```
+
+
