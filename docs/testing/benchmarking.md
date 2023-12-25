@@ -542,7 +542,9 @@ Putting aside the code, even with identical parameters, the benchmark's results 
 And yet, the above is still missing crucial details:
 
 - Did the web service run with the language interpreter or a binary?
-- What would be the impact of running it natively or as a container?
+- Is running on a laptop representing a production-grade environment? 
+- How would running the web service and benchmark on different machines impact the result?
+- How would running the web service running natively or as a container impact the results?
 - Is the code representing a minimal viable product? 
 
 ## Alternative approach
