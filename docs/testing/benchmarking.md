@@ -403,19 +403,9 @@ According to Bombardier repository, the following commands would represent the a
 ```mermaid
 xychart-beta
   title "Time Taken"
-  x-axis "Concurrent Sessions" [50, 100, 300]
+  x-axis "Concurrent Sessions" [50, Req, 100, Req, 300, Req]
   y-axis "Total time and Average requests" 
-  bar [84, 94, 107]
+  bar [84, 118974, 94, 105666, 107, 92972]
 ```
-
-```mermaid
-xychart-beta
-    title "Sales Revenue"
-    x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
-    y-axis "Revenue (in $)" 4000 --> 11000
-    bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
-    line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
-```
-
 
 
