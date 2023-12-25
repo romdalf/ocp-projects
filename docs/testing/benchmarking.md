@@ -403,10 +403,16 @@ According to Bombardier repository, the following commands would represent the a
 ```mermaid
 xychart-beta
   title "Time Taken"
-  x-axis "Concurrent Sessions" [50, 100, 300]
-  y-axis "Seconds and Average requests (in thousands)" 
-  bar [84, 94, 107]
-  line [118.974, 105.666, 92.972]
+  x-axis "Concurrent Sessions" [50G, 50Q, 100G, 100Q, 300G, 300Q]
+  y-axis "Seconds" 
+  bar [84, 106, 94, 100, 107, 103]
 ```
 
+```mermaid
+xychart-beta
+  title "Request per second"
+  x-axis "Concurrent Sessions" [50G, 50Q, 100G, 100Q, 300G, 300Q]
+  y-axis "Requests" 
+  bar [118974, 94220, 105666, 99732, 92972,96810]
+```
 
