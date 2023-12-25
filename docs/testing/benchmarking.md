@@ -399,20 +399,117 @@ According to Bombardier repository, the following commands would represent the a
 ./bombardier-darwin-arm64 -c 300 -n 10000000 http://localhost:3000
 ```
 
+``` title="Benchmarks for Quarkus"
+./bombardier-darwin-arm64 -c 50 -n 10000000 http://localhost:8080
+./bombardier-darwin-arm64 -c 100 -n 10000000 http://localhost:8080
+./bombardier-darwin-arm64 -c 300 -n 10000000 http://localhost:8080
+```
+
 
 ```mermaid
 xychart-beta
   title "Time Taken"
-  x-axis "Concurrent Sessions" [50G, 50Q, 100G, 100Q, 300G, 300Q]
-  y-axis "Seconds" 
+  x-axis "Concurrent Sessions (G=Go and Q=Quarkus)" [50G, 50Q, 100G, 100Q, 300G, 300Q]
+  y-axis "Time in seconds" 
   bar [84, 106, 94, 100, 107, 103]
 ```
 
 ```mermaid
 xychart-beta
-  title "Request per second"
-  x-axis "Concurrent Sessions" [50G, 50Q, 100G, 100Q, 300G, 300Q]
-  y-axis "Requests (in thousands)" 
+  title "Requests per second"
+  x-axis "Concurrent Sessions (G=Go and Q=Quarkus)" [50G, 50Q, 100G, 100Q, 300G, 300Q]
+  y-axis "Requests in thousands" 
   bar [118.974, 94.220, 105.666, 99.732, 92.972, 96.810]
 ```
 
+Here are the output of each benchmark sessions for reference:
+
+``` title="Benchmarks for Go/Gin with 50 concurrent sessions"
+./bombardier-darwin-arm64 -c 50 -n 10000000 http://localhost:3000 
+
+Bombarding http://localhost:3000 with 10000000 request(s) using 50 connection(s)
+ 10000000 / 10000000 [========================================] 100.00% 118974/s 1m24s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec    119217.54   12349.05  142939.36
+  Latency      417.95us   235.34us    30.12ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    21.72MB/s
+```
+
+``` title="Benchmarks for Go/Gin with 100 concurrent sessions"
+./bombardier-darwin-arm64 -c 100 -n 10000000 http://localhost:3000 
+
+Bombarding http://localhost:3000 with 10000000 request(s) using 100 connection(s)
+ 10000000 / 10000000 [========================================] 100.00% 105666/s 1m34s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec    105705.98   16564.25  145158.63
+  Latency        0.94ms   502.03us   115.73ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    19.26MB/s
+```
+
+``` title="Benchmarks for Go/Gin with 300 concurrent sessions"
+./bombardier-darwin-arm64 -c 300 -n 10000000 http://localhost:3000
+
+Bombarding http://localhost:3000 with 10000000 request(s) using 300 connection(s)
+ 10000000 / 10000000 [=========================================] 100.00% 92972/s 1m47s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     92812.94    9474.50  152756.79
+  Latency        3.22ms     0.96ms    69.58ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    16.94MB/s
+```
+
+``` title="Benchmarks for Quarkus with 50 concurrent sessions"
+./bombardier-darwin-arm64 -c 50 -n 10000000 http://localhost:8080 
+
+Bombarding http://localhost:8080 with 10000000 request(s) using 50 connection(s)
+ 10000000 / 10000000 [=========================================] 100.00% 94220/s 1m46s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     94411.32   15183.30  111797.34
+  Latency      528.69us   408.60us   118.56ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    13.77MB/s
+```
+
+``` title="Benchmarks for Quarkus with 100 concurrent sessions"
+./bombardier-darwin-arm64 -c 100 -n 10000000 http://localhost:8080
+
+Bombarding http://localhost:8080 with 10000000 request(s) using 100 connection(s)
+ 10000000 / 10000000 [=========================================] 100.00% 99732/s 1m40s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     99857.30    7043.92  112384.92
+  Latency        1.00ms   139.38us    23.76ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    14.57MB/s
+```
+
+``` title="Benchmarks for Quarkus with 300 concurrent sessions"
+./bombardier-darwin-arm64 -c 300 -n 10000000 http://localhost:8080
+
+Bombarding http://localhost:8080 with 10000000 request(s) using 300 connection(s)
+ 10000000 / 10000000 [=========================================] 100.00% 96810/s 1m43s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     96891.15   12888.43  114944.16
+  Latency        3.10ms     0.97ms   113.66ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    14.13MB/s
+```
