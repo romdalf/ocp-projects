@@ -119,3 +119,6 @@ nav:
       - Network Policy: application/isolation.md
     - Testing:
       - Intro: application/testing.md
+  - Testing:
+    - testing/index.md
+    - Benchmarking: testing.md

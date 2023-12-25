@@ -1,7 +1,25 @@
-# Properly benchmarking languages and framework
+# Benchmarking languages and framework
 
+Working with customers and partners on application modernization projects sparks discussions about governance. This system of rules and practices should influence the choice of language and related framework. However, from a governance and a bias perspective, I highlight the risks of randomly selecting these without performing relevant test case benchmarking. 
 
+Regarding bias, Application teams have their favorite language and framework in mind and will research proof that this was the best option. The Internet is resourceful in supporting opinionated views with a few details about the methodology used. 
 
+Let's take this [article](https://medium.com/deno-the-complete-reference/quarkus-java-vs-gin-go-hello-world-performance-0a2ec6d92078) as a reference. While the overall content provides a sufficient overview for an introduction, it does not help to perform a similar benchmarking within our environment, which will most likely significantly differ from the author. Let's address this missing part as a companion to the article. 
+
+## How to redo as-is the article benchmark
+From a setup perspective, the author defines the following:
+- The hardware is based on a MacBook Pro M2 with 16GB of RAM
+- [Bombardier](https://github.com/codesenberg/bombardier); a HTTP(S) bencharmking tool written in Go(lang)
+- Go version 1.21.3
+- Quarkus 3.5.1 with Java v21
+
+These are a good start; however, the Go code calls from [Gin](https://github.com/gin-gonic/gin), a Go HTTP framework for which we don't have any version reference. The same goes for Bombardier.
+
+### Code
+
+|GO | Quarkus | 
+|---|---------|
+|```yaml --8<-- "sources/project.yaml" ``` | ```yaml --8<-- "sources/project.yaml" ```|
 
 
 
