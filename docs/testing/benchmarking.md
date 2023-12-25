@@ -23,12 +23,11 @@ These are a good start; however, the Go code calls from [Gin](https://github.com
 --8<-- "sources/hellow-world-article/hello-world-go/main.go" 
 ```
 
-
 ```java title="Quarkus"
 --8<-- "sources/hello-world-article/hello-world-quarkus/src/main/java/org/acme/HelloWorldApplication.java" 
 ```
 
-<div class="grid" markdown>
+</div>
 
 
 
