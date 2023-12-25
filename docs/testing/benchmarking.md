@@ -400,7 +400,7 @@ According to Bombardier repository, the following commands would represent the a
 ```
 
 
-```mermaid.js
+```mermaid
 xychart-beta
   title "Time Taken
   x-axis "Concurrent Sessions" [50,100,300]
