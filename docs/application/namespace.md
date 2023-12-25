@@ -19,7 +19,6 @@ Considering an application lifecycle, three projects could be created on a singl
 
 ```yaml
 --8<-- "sources/gitops/dev/project.yaml"
-
 ```
 
 * ```my-webapp-tst```; where a release candidate would be deployed and goes through the functional and non-functional testing.
