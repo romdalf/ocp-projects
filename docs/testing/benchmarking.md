@@ -424,9 +424,9 @@ xychart-beta
 
 ```mermaid
 xychart-beta
-  title "Minimum latency
+  title "Minimum Latency"
   x-axis "Concurrent Sessions (G=Go and Q=Quarkus)" [50G, 50Q, 100G, 100Q, 300G, 300Q]
-  y-axis "latency in ms" 
+  y-axis "Latency in ms" 
   bar [0.417, 0.528, 0.94, 1, 3.22, 3.1]
 ```
 
