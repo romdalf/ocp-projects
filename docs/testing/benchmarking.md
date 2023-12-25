@@ -11,13 +11,19 @@ From a setup perspective, the author defines the following:
 
 - The hardware is based on a MacBook Pro M2 with 16GB of RAM
 - [Bombardier](https://github.com/codesenberg/bombardier); a HTTP(S) bencharmking tool written in Go(lang)
-- Go version 1.21.3
-- Quarkus 3.5.1 with Java v21
+- Go version 1.21.3; follow [this guide](https://go.dev/doc/install) to install Go on your system
+- Quarkus 3.5.1 with Java v21; follow [this guide](https://quarkus.io/get-started/) to install Quarkus on your system
 
 These are a good start; however, the Go code calls from [Gin](https://github.com/gin-gonic/gin), a Go HTTP framework for which we don't have any version reference. The same goes for Bombardier.
 
 ### Code
 The below code is the as-is output from the article. These are the traditional ```hello world``` examples to showcase languages and easily compare them. Even with years of development experience, anyone needed more to run the code from an unknown language and benchmark it.
+
+The code is also available within this repository within ```docs/sources/hello-world-article``` in the following subdirectories:   
+
+- ```hello-world-go``` the ready to use Go code
+- ```hello-world-quarkus``` the ready to use Quarkus code
+
 
 #### Go/Gin   
 
