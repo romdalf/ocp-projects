@@ -121,4 +121,4 @@ nav:
       - Intro: application/testing.md
   - Testing:
     - testing/index.md
-    - Benchmarking: testing.md
+    - Benchmarking: benchmarking.md
