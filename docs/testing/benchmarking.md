@@ -276,11 +276,11 @@ mv src/test/java/org/acme/GreetingResourceTest.java src/test/java/org/acme/Hello
 
 - Adapt the content of each test files like: 
 
-```java title="HelloWorldApplicationIT.java"
+```java title="src/test/java/org/acme/HelloWorldApplicationIT.java"
 --8<-- "sources/hello-world-article/hello-world-quarkus/src/test/java/org/acme/HelloWorldApplicationIT.java"
 ```
 
-```java title="HelloWorldApplicationTest.java"
+```java title="src/test/java/org/acme/HelloWorldApplicationTest.java"
 --8<-- "sources/hello-world-article/hello-world-quarkus/src/test/java/org/acme/HelloWorldApplicationTest.java"
 ```
 
@@ -383,6 +383,30 @@ __  ____  __  _____   ___  __ ____  ______
 2023-12-25 11:22:35,502 INFO  [io.quarkus] (main) Installed features: [cdi, resteasy-reactive, smallrye-context-propagation, vertx]
 ```
 
-### Benchmarking
+### Benchmarks
+
+Based on the article, we don't have the overall process to perform the benchmarks. However, there is some specific parameters that are shared:
+
+- Bombardier is the tool; in my case the binary is ```bombardier-darwin-arm64``` and needs to be adapted to your specific environment
+- About 10 million requests were executed
+- Different concurrency scenarios were used; 50, 100, and 300
+
+According to Bombardier repository, the following commands would represent the above parameters:
+
+``` title="Benchmarks for Go/Gin"
+./bombardier-darwin-arm64 -c 50 -n 10000000 http://localhost:3000
+./bombardier-darwin-arm64 -c 100 -n 10000000 http://localhost:3000
+./bombardier-darwin-arm64 -c 300 -n 10000000 http://localhost:3000
+```
+
+
+```mermaid.js
+xychart-beta
+  title "Time Taken
+  x-axis "Concurrent Sessions" [50,100,300]
+  y-axis "Total time & Average req/s" 
+  bar [84, 94, 107]
+  line [118974, 105666, 92972]
+```
 
 
