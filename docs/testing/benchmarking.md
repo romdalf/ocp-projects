@@ -412,7 +412,7 @@ xychart-beta
 xychart-beta
   title "Request per second"
   x-axis "Concurrent Sessions" [50G, 50Q, 100G, 100Q, 300G, 300Q]
-  y-axis "Requests" 
-  bar [118974, 94220, 105666, 99732, 92972,96810]
+  y-axis "Requests (in thousands)" 
+  bar [118.974, 94.220, 105.666, 99.732, 92.972, 96.810]
 ```
 
