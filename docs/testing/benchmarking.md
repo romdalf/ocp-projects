@@ -18,35 +18,11 @@ These are a good start; however, the Go code calls from [Gin](https://github.com
 
 ### Code
 
-```yaml 
---8<-- "sources/project.yaml"
-```
-
-```
---8<-- "sources/hello-world-article/hello-world-quarkus/src/main/java/org/acme/HelloWorldApplication.java"
-```
- 
 
 ```java
-package org.acme;
-
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
-import io.smallrye.common.annotation.NonBlocking;
-
-@Path("/")
-public class HelloWorldApplication {
-
-    @GET
-    @NonBlocking
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello World!";
-    }
-}
+--8<-- "sources/hello-world-article/hello-world-quarkus/src/main/java/org/acme/HelloWorldApplication.java"
 ```
+
 
 
 ```
