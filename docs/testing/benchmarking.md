@@ -404,7 +404,7 @@ According to Bombardier repository, the following commands would represent the a
 xychart-beta
   title "Time Taken"
   x-axis "Concurrent Sessions" [50,100,300]
-  y-axis "Total time & Average req/s" 
+  y-axis "Total time and Average req/s" 
   bar [84, 94, 107]
   line [118974, 105666, 92972]
 ```
