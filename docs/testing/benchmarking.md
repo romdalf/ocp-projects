@@ -19,7 +19,7 @@ These are a good start; however, the Go code calls from [Gin](https://github.com
 ### Code
 The below code is the as-is output from the article. These are the traditional ```hello world``` examples to showcase languages and easily compare them. Even with years of development experience, anyone needed more to run the code from an unknown language and benchmark it.
 
-### Go/Gin   
+#### Go/Gin   
 
 ```go
 --8<-- "sources/hello-world-article/hello-world-go/main.go"
@@ -84,9 +84,40 @@ Hello world!%
 
 ***Note that there is no output logged into the first console where the service is running.***
 
+- The code seems to be working, we can build a binary:
+
+```
+go build -o hello-world main.go
+```
+
+Resulting in the creating a binary called ```hello-world``` with the following size:
+
+```bash
+-rwxr-xr-x   1 romdalf  staff   9.5M Dec 25 10:32 hello-world
+```
+
+- Finally, to run the binary:
+
+```
+./hello-world
+```
+Resulting in the following output:
+
+```
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> main.main.func1 (1 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3000
+```
 
 
-### Quarkus   
+
+
+#### Quarkus   
 
 ```java
 --8<-- "sources/hello-world-article/hello-world-quarkus/src/main/java/org/acme/HelloWorldApplication.java"
