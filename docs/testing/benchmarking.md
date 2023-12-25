@@ -422,6 +422,14 @@ xychart-beta
   bar [118.974, 94.220, 105.666, 99.732, 92.972, 96.810]
 ```
 
+```mermaid
+xychart-beta
+  title "Minimum latency
+  x-axis "Concurrent Sessions (G=Go and Q=Quarkus)" [50G, 50Q, 100G, 100Q, 300G, 300Q]
+  y-axis "latency in ms" 
+  bar [0.417, 0.528, 0.94, 1, 3.22, 3.1]
+```
+
 Here are the output of each Go/Gin benchmark sessions for reference:
 
 === "50 sessions"
