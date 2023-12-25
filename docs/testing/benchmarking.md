@@ -17,13 +17,74 @@ From a setup perspective, the author defines the following:
 These are a good start; however, the Go code calls from [Gin](https://github.com/gin-gonic/gin), a Go HTTP framework for which we don't have any version reference. The same goes for Bombardier.
 
 ### Code
-
+The below code is the as-is output from the article. These are the traditional ```hello world``` examples to showcase languages and easily compare them. Even with years of development experience, anyone needed more to run the code from an unknown language and benchmark it.
 
 ### Go/Gin   
 
-```java
+```go
 --8<-- "sources/hello-world-article/hello-world-go/main.go"
 ```
+
+Here the steps to run this code:
+
+- Open two terminal consoles
+- Create a directory like ```hello-world-go```
+- Create a file called ```main.go``` and copy the above code in
+- Initialize the module(s) for the project:  
+
+```
+go mod init hello-world-go
+```
+This will create a file called ```go.mod``` with the following content: 
+
+```go
+--8<-- "sources/hello-world-article/hello-world-go/go.mod"
+```
+
+- Check for missing modules:
+
+```
+go mod tidy
+```
+This will create a file called ```go.sum``` with the following content:
+
+```go
+--8<-- "sources/hello-world-article/hello-world-go/go.sum"
+```
+
+- In one of the console, run the code:
+
+```
+go run main.go
+```
+
+Resulting in the following output:
+
+```
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> main.main.func1 (1 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :3000
+```
+
+- In the second console, use ```curl``` to check the service:
+
+```
+curl localhost:3000
+```
+
+Resulting in the following output: 
+```
+Hello world!% 
+```
+
+***Note that there is no output logged into the first console where the service is running.***
+
+
 
 ### Quarkus   
 
@@ -31,15 +92,6 @@ These are a good start; however, the Go code calls from [Gin](https://github.com
 --8<-- "sources/hello-world-article/hello-world-quarkus/src/main/java/org/acme/HelloWorldApplication.java"
 ```
 
-
-
-```
-go mod init github.com/romdalf/ocp-projects/docs/sources/hello-world-article/go
-go mod tidy
-go run main.go
-```
-
-# Quarkus 
 To install Quarkus CLI, you can follow the official [Get Started](https://quarkus.io/get-started/) procedure by executing the following command in your favorite CLI:
 
 ```
