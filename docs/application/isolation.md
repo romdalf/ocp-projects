@@ -2,7 +2,7 @@
 By default, all pods from any projects can have access to each others. To isolate each project, network policies can be used.  
 Here is an example with a flow diagram and the associated configuration:
 
-![network policy flow](images/networkpolicy-flow.png)
+![network policy flow](../images/networkpolicy-flow.png)
 
 ```yaml 
 apiVersion: networking.k8s.io/v1
