@@ -123,6 +123,9 @@ nav:
       - Network Policy: application/isolation.md
     - Testing:
       - Intro: application/testing.md
+  - Networking:
+    - networking/index.md
+    - Multicluster Interconnect: networking/multicluster.md
   - Testing:
     - testing/index.md
     - Benchmarking: testing/benchmarking.md
