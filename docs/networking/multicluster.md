@@ -8,10 +8,6 @@ This demo is leveraging the [skupper example hello world](https://github.com/sku
 - how to deploy applications in a PaaS or even CaaS approach? or how to release in full "gated" autonomy
 - how to support split front-end/back-end architecture? or how to leverage the cloud to deploy applications within data sovereignty environment
 
-
-![skupper hello world 0](../images/shiny-octo-spoon-hello-world-00.png)
-
-
 ## requirements
 
 This demo has been prepared for Kubernetes in general, and tested on Red Hat OpenShift for a customers and partners event using the followings: 
@@ -27,7 +23,9 @@ However, since OpenShift is a certified Kubernetes distribution, the overall wal
     Skupper has been selected in this context to provide a granular connectivity between the front-end and back-end across a secure network.  
     Another solution would be to use Submariner if unifying two cluster at a network level from a scope perspective.  
 
-## running locally 
+## running everything locally 
+
+![skupper hello world 0](../images/multicluster-mono.drawio.png)
 
 ### start OpenShift Local
 run:
@@ -198,6 +196,7 @@ In this scenario, we would consider the followings:
 - the OpenShift Local as an on-prem environement called "south"
 - the Azure Red Hat OpenShift as our cloud environement called "north"
 
+![skupper hello world 0](../images/multicluster-split.drawio.png)
 
 ### log in and set contexts
 
