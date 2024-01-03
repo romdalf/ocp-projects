@@ -1,0 +1,7 @@
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: my-webapp-prd
+  annotations:
+    openshift.io/description: Production Environment for External customer facing web service
+    openshift.io/display-name: PRD EWS

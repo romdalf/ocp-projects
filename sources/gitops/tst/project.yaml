@@ -1,0 +1,7 @@
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: my-webapp-tst
+  annotations:
+    openshift.io/description: Test environment for External customer facing web service
+    openshift.io/display-name: TST EWS
