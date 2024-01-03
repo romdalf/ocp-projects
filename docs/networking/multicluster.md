@@ -1,4 +1,4 @@
-# Multi Cluster Application Interconnect
+# Multicluster Application Interconnect
 
 ## a hybrid cloud story
 
